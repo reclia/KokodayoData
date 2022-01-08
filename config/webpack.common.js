@@ -32,26 +32,26 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.VERSION': JSON.stringify(time),
     }),
-    new ImageminPlugin({
-      bail: false, // Ignore errors on corrupted images
-      cache: true,
-      imageminOptions: {
-        plugins: [
-          ['mozjpeg', { quality: 40 }],
-          ['pngquant', { quality: [0.6, 0.8] }],
-          [
-            'svgo',
-            {
-              plugins: [
-                {
-                  removeViewBox: false,
-                },
-              ],
-            },
-          ],
-        ],
-      },
-    }),
+    // new ImageminPlugin({
+    //   bail: false, // Ignore errors on corrupted images
+    //   cache: true,
+    //   imageminOptions: {
+    //     plugins: [
+    //       ['mozjpeg', { quality: 40 }],
+    //       ['pngquant', { quality: [0.6, 0.8] }],
+    //       [
+    //         'svgo',
+    //         {
+    //           plugins: [
+    //             {
+    //               removeViewBox: false,
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     ],
+    //   },
+    // }),
     ...swPlugins,
   ],
   output: {
